@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #e0e0e0, #f5f5f5);
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #007BFF; /* Blue background */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+}
+
+.burger-menu {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.burger-menu span {
+  height: 3px;
+  width: 25px;
+  background: #fff; /* White bars for burger menu */
+  margin: 4px 0;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+}
+
+.logo img {
+  width: 40px;
+  height: auto;
+  margin-right: 10px;
+}
+
+.logo span {
+  color: #fff; /* White text for HomeNexus */
+  font-weight: bold; /* Bold font */
+  font-size: 20px; /* Slightly larger font size */
+}
+
+.logout {
+  color: #fff; /* White text for logout link */
+  text-decoration: none;
+}
+
+.logout:hover {
+  text-decoration: underline;
+}
+
+.container {
+  display: flex;
+  flex: 1;
+  margin: 20px; /* Add margin to separate container from header and lower part of the screen */
+}
+
+.sidebar {
+  width: 250px; /* Increased width for the sidebar */
+  background-color: #fff; /* White background for the sidebar */
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.25);
+  padding: 15px; /* Adjusted padding */
+  overflow-y: auto;
+  border-radius: 20px; /* Rounded corners for the sidebar */
+  transition: transform 0.3s ease;
+}
+
+.closebtn {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  display: none; /* Hidden by default */
+}
+
+.sidebar.active .closebtn {
+  display: block; /* Show the close button when sidebar is active */
+}
+
+.close-icon {
+  width: 24px; /* Adjust the size as needed */
+  height: 24px; /* Adjust the size as needed */
+}
+
+/*.sidebar ul li a {
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.25);
+}*/
+
+.sidebar h2 {
+  font-size: 24px;
+  font-weight: 700;
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  margin: 8px 0; /* Adjusted margin */
+}
+
+.sidebar ul li a {
+  color: #000;
+  text-decoration: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px; /* Adjusted font size */
+}
+
+.sidebar ul li a:hover {
+  text-decoration: underline;
+}
+
+.dropdown-icon {
+  width: 10px; /* Adjust the size as needed */
+  height: auto;
+}
+
+.dropdown-content {
+  max-height: 0px; /* Initial max-height for the dropdown, hidden by default */
+  overflow: hidden; /* Hide overflow */
+  list-style: none;
+  padding: 0;
+  margin: 0; /* Adjusted margin */
+  transition: max-height 0.5s ease; /* Add transition for dropdown */
+}
+
+.dropdown-content li {
+  margin: 5px 0;
+  padding-left: 20px; /* Adjusted padding */
+}
+
+.dropdown-content.show {
+  max-height: 200px; /* Adjust max-height as needed */
+}
+
+.content {
+  flex: 1;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 20px; /* Rounded corners for the content area */
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.25);
+  margin-left: 20px; /* Add space between the sidebar and the content */
+}
+
+@media (max-width: 768px) {
+  .burger-menu {
+    display: flex;
+  }
+
+  .closebtn {
+    display: block; /* Show the close button on mobile */
+  }
+
+  .sidebar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 250px; /* Adjusted width for a smaller sidebar */
+    height: 100%;
+    transform: translateX(-100%);
+  }
+
+  .sidebar.active {
+    transform: translateX(0);
+  }
+
+  .content {
+    margin-left: 0;
+  }
+}
